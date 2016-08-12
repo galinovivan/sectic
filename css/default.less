@@ -1,0 +1,177 @@
+@import "varibles";
+@import "mixin";
+
+@font-face {
+  font-family: gotham_light;
+  src: url('../fonts/GOTHAPROLIG.OTF')
+}
+@font-face {
+  font-family: gotham_pro;
+  src: url('../fonts/GOTHAPROREG.OTF');
+}
+@font-face {
+  font-family: gotham_med;
+  src: url('../fonts/GOTHAPROMED.OTF');
+}
+@font-face {
+  font-family: gothamBold;
+  src: url('../fonts/GOTHAPRONARBOL.OTF');
+}
+@font-face {
+  font-family: muller_ultra;
+  src: url('../fonts/Muller-UltraLight.otf');
+}
+@font-face {
+  font-family: muller_bold;
+  src: url('../fonts/Muller-Black.otf');
+}
+@font-face {
+  font-family: muller_boldin;
+  src: url('../fonts/Muller-Bold.otf');
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
+body {
+  font-family: @gothamPro;
+  font-size: @baseFontSize;
+  color: @black;
+  position: relative;
+  min-height: 100%;
+}
+h1,
+h2 {
+  font-family: @mullerBold;
+}
+h1 {
+  font-size: @h1_size;
+}
+h2 {
+  font-size: @h2_size;
+}
+ul {
+  list-style: none;
+  .padding_margin_clear();
+}
+h3 {
+  font-size: @h3_size;
+}
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+.align_center {
+  .align();
+}
+.align_left {
+  .align(left);
+}
+.align_right {
+  .align(right);
+}
+a {
+  color: @black;
+  font-size: @baseFontSize - 1;
+}
+a:active,
+a:visited,
+a:focus {
+  outline: none;
+}
+button {
+  .btn_style();
+  display: block;
+  &:hover {
+    text-decoration: none !important;
+    color: @white !important;
+  }
+  &:visited,
+  &:focus {
+    color: @white !important;
+    text-decoration: none !important;
+  }
+}
+.inline {
+  display: inline-block;
+}
+.up {
+  text-transform: uppercase;
+}
+.modal {
+  .modal-header {
+    .margin_align();
+    border: none;
+    position: relative;
+    .modal-title {
+      .align();
+
+    }
+    .close {
+      width: auto;
+      position: absolute;
+    }
+  }
+  .modal-content {
+    padding: 45px 0;
+    margin: auto;
+    .radius(0);
+  }
+  form {
+    .form_style();
+  }
+}
+.background_gray {
+  background: @backgroundGray;
+}
+.img_center {
+  .margin_align();
+}
+.text_gray {
+  color: @gray;
+}
+.clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+.list_inline {
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+}
+.section_capt {
+  .align();
+  h2 {
+    margin: 0;
+  }
+}
+.btn_base {
+  font-family: @mullerMedBold;
+  font-size: @baseFontSize + 1;
+  display: block;
+  height: 42px;
+  .btn_style(80%, 12px);
+}
+.btn_transparent {
+  .btn_style(200px, 12px);
+  height: 45px;
+  background: transparent;
+  font-family: @gothamProMed;
+  font-size: @baseFontSize + 2;
+  border: 2px solid @white;
+  color: @white;
+  .transition();
+  .btn_hover(@white, @color-base);
+}
+.grid_5 {
+  width: 20%;
+  float: left;
+  .box();
+}
+
